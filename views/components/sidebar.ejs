@@ -1,0 +1,55 @@
+<div class="bg-success">
+    <div>
+        
+        <h1 class="userId d-none"><%=user._id%></h1>
+        <h1 class="userName"><%=user.name%></h1>
+        <a href="/profile" class="links">settings</a>
+
+        <div>
+            <div class="d-flex">
+                <table class="table table-hover">
+                    <tr class="table-hover">
+                        <td><h3>Channels</h3></td>
+                    </tr>
+                </table>
+            </div>
+            <form action="/createChannel" method="POST">
+                <input type="text" name="channelName" placeholder="new channelname">
+                <input type="submit" value="Create new chanel">
+            </form>
+            <% channels.map(item =>{%>
+                <table class="table table-hover">
+                    <tr class="table-hover" onclick="location.href='/channel/<%=item._id%>'">
+                            <td><%=item.channelName%></td>
+                    </tr>
+                </table>
+            <%})%>
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div class="d-flex">
+                <h4>Online Users</h4>
+                <!-- <h3>chat with</h3>
+                <h3 id="chathWith">SIMON</h3>
+                <a id="chattWith" class="chatRoom" href='/create-chatRoom/6053aa52098a8c014805fb21'>join</a> -->
+
+            </div>
+            <p>press user to start new chat</p>
+            <ul id="online_user" class="d-flex flex-column">             
+                
+            </ul>
+        </div>
+    </div>
+    <div>
+        <a href="/logout">
+            <button class=" btn btn-primary"> Log Out</button>
+        </a>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../../public/logInScript.js"></script>
+

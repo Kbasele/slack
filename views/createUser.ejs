@@ -1,0 +1,28 @@
+<div class="mx-auto vh-100 row">
+    
+    <%- include('./partials/messages')%>
+    <form class="d-flex flex-column row col-2 m-auto " action="/create/user" method="POST">
+        <input
+            placeholder="name"
+            class="form-control mb-2"
+            name="name"
+            value="<%= typeof name != 'undefined' ? name : '' %>" required autofocus>
+            
+        <input 
+            placeholder="email" 
+            class="form-control mb-2" 
+            name="email"
+            value="<%= typeof email != 'undefined' ? email : '' %>" required
+            >
+        <input placeholder="password" 
+            class="form-control mb-2" 
+            name="password"
+            >
+        <input 
+            type="submit" 
+            value="Create account" 
+            class="btn btn-secondary align-right">
+        <a href="/login">Already have an account</a>
+        
+    </form>
+</div>

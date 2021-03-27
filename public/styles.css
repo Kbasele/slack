@@ -1,0 +1,19 @@
+.header {
+  min-height: 50px;
+  height: 5vh;
+}
+
+.body {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.main-content {
+  overflow: hidden;
+}
+
+.links{
+  text-decoration: none;
+  color: black; 
+}
+/*# sourceMappingURL=styles.css.map */

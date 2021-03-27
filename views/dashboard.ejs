@@ -1,0 +1,22 @@
+<div class="d-flex flex-column dashboardSidebar ">    
+    <div class="d-flex">
+        <%- include('./components/sidebar')%>
+
+        <div class="container body notewall">
+            <!-- <form action="/api" method="POST"> -->
+            
+                <label>Klotterplank</label>
+                <input type="text" name="usernote" id='formInput'>
+                <input type="submit" value="klottra" id="noteForm">
+            
+                <%allNotes.map(item=>{%>
+                    <div class="d-flex flex-row note">
+                        <p><%=item.text%></p>
+                        <i class="fas fa-trash m-2 deleteBtn" name=<%=item._id%> ></i>
+                    </div>
+                <%})%>
+        </div>
+    </div>
+
+</div>
+<script src="../public/noteScript.js"></script>

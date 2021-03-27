@@ -1,0 +1,46 @@
+<div class="d-flex flex-column body">
+    <div class="d-flex flex-row main-content ">
+        <%- include('./components/sidebar')%>    
+        <div class="container d-flex flex-column justify-content-sm-between ">
+            <div class="header d-flex justify-content-between align-items-center">
+                <h1></h1>
+
+            </div>
+            <% if (channelId) { %>
+                <h1 class="d-none" id="channel"><%=channelId%></h1>
+            <% } %>
+            <div class="overflow-auto body chat-messages">
+                <p>rumnummer</p>
+
+<!--                     <div class="border p-2 mb-2 message">
+                        <div class="d-flex">
+                            <h3>kevin</h3> 
+                            <p>3 aug</p>
+                        </div>
+                        <p>lalalalalalalallala</p>
+                        <p>Date</p>
+                    </div> -->
+
+                <%messages.map(msg =>{%>
+                    <div class="border p-2 mb-2 ">
+                        <div class="d-flex">
+                            <h3><%=msg.username%></h3> 
+                            <p><%=msg.date%></p>
+                        </div>
+                        <p><%=msg.text%></p>
+                        <p>Date</p>
+                    </div>
+                <%})%>
+    
+            </div>
+            <div class="input-group align-items-end pt-5 pb-3">
+                <form class="d-flex w-100" action="" method="" id="chat-form">
+                    <input class="d-none" name="channelID" value="<%- channelId %>">
+                    <input class="form-control" type="text" aria-label="With textarea" placeholder="Type Message" name="userInput">
+                    <input type="submit" class="rounded-0" value="Skicka">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

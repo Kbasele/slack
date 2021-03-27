@@ -1,0 +1,38 @@
+<div class="d-flex flex-column body">
+    <div class="d-flex flex-row main-content ">
+        <%- include('./components/sidebar')%>    
+        <div class="container d-flex flex-column justify-content-sm-between ">
+            <div class="header d-flex justify-content-between align-items-center">
+                <h1></h1>
+                <form class=" d-flex flex-row align-items-center" method="POST" action="/channelInvite">
+                    <input class="d-none" name="channelID" value="<%=channelId%>">
+                    <input name="inviteInput" type="mail" class="form-control" placeholder="type to invite user" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="submit" class="rounded-0" >
+                   
+                </form>
+            </div>
+            <div class="overflow-auto body">
+                <p><%=channelId%></p>
+                <%posts.map(item =>{%>
+                    <div class="border p-2 mb-2 ">
+                        <div class="d-flex">
+                            <h3><%=item.author%></h3> 
+                            <p><%=item.date%></p>
+                        </div>
+                        <p><%=item.text%></p>
+                        <p>Date</p>
+                    </div>
+                <%})%>
+    
+            </div>
+            <div class="input-group align-items-end pt-5 pb-3">
+                <form class="d-flex w-100" action="/channel/<%=channelId%>" method="POST">
+                    <input class="d-none" name="channelID" value="<%- channelId %>">
+                    <input class="form-control" type="text" aria-label="With textarea" placeholder="Type Message" name="userInput">
+                    <input type="submit" class="rounded-0">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

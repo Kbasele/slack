@@ -1,0 +1,11 @@
+<div class="mx-auto vh-100 row">
+
+    <form action="/login" method="POST" class="d-flex flex-column row col-2 m-auto ">
+        <%- include('./partials/messages')%>
+        <input placeholder="email" class="form-control mb-2" name="email" type="text">
+        <input placeholder="password" class="form-control mb-2" name="password" type="password">
+        <input type="submit" value="login" class="btn btn-secondary align-right">
+        <a href="/create/user">Create account</a>
+        
+    </form>
+</div>
