@@ -113,7 +113,7 @@ const notes = require('./routes/notes');
  */
 
 require('dotenv').config()
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect("mongodb://localhost:27017/slack_cloners", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
